@@ -31,6 +31,7 @@ const StateSample3 = () => {
 
     return (
         <SafeAreaView>
+            <Text>Length: {categoryList.length}</Text>
             <Button title='Sort by name' onPress={sortByName}></Button>
             <FlatList
                 data={categoryList}
