@@ -1,9 +1,10 @@
-import { View, Text } from 'react-native'
+import { View, Text, SafeAreaView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import ProductTitle from './ProductTitle'
 import ProductList from './ProductList'
 import axios from 'axios'
-import TechCareerButton from './TechCareerButton'
+import TechCareerButton from './TechCareerButton';
+
 
 const ProductScreen = () => {
 
@@ -21,9 +22,13 @@ const ProductScreen = () => {
 
 
     return (<>
-        <TechCareerButton title="Başvur!"  />
-        <ProductTitle count={50} />
-        <ProductList products={products} />
+        <SafeAreaView>
+        
+            {/* <TechCareerButton title="Başvur!" height={50} />
+            <ProductTitle count={products.length} /> */}
+            <ProductList products={products} />
+        </SafeAreaView>
+
     </>
     )
 }
