@@ -6,22 +6,22 @@ import { baseService } from '../service/baseService';
 
 const SupplierPage = () => {
     const [suppliers, setsuppliers] = useState([]);
-    const [loading, setloading] = useState(true)
+    const [loading, setloading] = useState(true);
+    const [error, seterror] = useState({})
 
 
     useEffect(() => {
 
-        // axiosInstance.get('/api/suppliers')
-        //     .then(res => {
-        //         setsuppliers(res.data);
-        //         setloading(false)
-        //     })
-        //     .catch(err => {
-        //         console.log('ERror', err);
-        //     })
+        axiosInstance.get('/api/suppliers')
+            .then(res => {
+                setsuppliers(res.data);
+                setloading(false)
+            })
+            .catch(err => {
+                console.log('ERror', err);
+                seterror(err)
+            })
 
-       var data =  baseService.getAll();
-       setsuppliers(data)
 
     }, [])
 
