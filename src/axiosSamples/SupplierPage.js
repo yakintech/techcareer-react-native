@@ -2,7 +2,6 @@ import { View, Text, FlatList, ActivityIndicator } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { axiosInstance } from './axiosInstance';
-import { baseService } from '../service/baseService';
 
 const SupplierPage = () => {
     const [suppliers, setsuppliers] = useState([]);
